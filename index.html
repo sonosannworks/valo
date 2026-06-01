@@ -12,7 +12,20 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- モバイルナビ オーバーレイ（header外・独立） -->
+  <nav class="nav-overlay" id="navOverlay">
+    <button class="nav-overlay__close" id="navClose" aria-label="閉じる">
+      <span></span><span></span>
+    </button>
+    <a href="#hero"     onclick="closeNav()">HOME</a>
+    <a href="#products" onclick="closeNav()">PRODUCTS</a>
+    <a href="#about"    onclick="closeNav()">ABOUT</a>
+    <a href="#repair"   onclick="closeNav()">REPAIR</a>
+    <a href="#journal"  onclick="closeNav()">JOURNAL</a>
+    <a href="#contact"  onclick="closeNav()">CONTACT</a>
+  </nav>
+
+  <!-- HEADER：hero外に置き、CSSでheroの上に重ねる -->
   <header class="header" id="header">
     <div class="header__inner">
       <a href="#" class="header__logo">
@@ -54,7 +67,9 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero__bg">
-      <img src="image/top.jpg" alt="Valo Leather Atelier" class="hero__img">
+      <img src="image/top.jpg"  alt="" class="hero__img hero__img--slide active">
+      <img src="image/work.jpg" alt="" class="hero__img hero__img--slide">
+      <img src="image/top2.jpg" alt="" class="hero__img hero__img--slide">
       <div class="hero__overlay"></div>
     </div>
     <div class="hero__content">
@@ -78,40 +93,20 @@
     </div>
     <div class="products__grid">
       <article class="product-card">
-        <a href="#shop" class="product-card__img-wrap">
-          <img src="image/top.jpg" alt="Long Wallet">
-        </a>
-        <div class="product-card__info">
-          <h3>LONG WALLET</h3>
-          <p class="price">¥28,600〜</p>
-        </div>
+        <a href="#shop" class="product-card__img-wrap"><img src="image/top.jpg" alt="Long Wallet"></a>
+        <div class="product-card__info"><h3>LONG WALLET</h3><p class="price">¥28,600〜</p></div>
       </article>
       <article class="product-card">
-        <a href="#shop" class="product-card__img-wrap">
-          <img src="image/new.jpg" alt="Key Case">
-        </a>
-        <div class="product-card__info">
-          <h3>KEY CASE</h3>
-          <p class="price">¥7,800〜</p>
-        </div>
+        <a href="#shop" class="product-card__img-wrap"><img src="image/new.jpg" alt="Key Case"></a>
+        <div class="product-card__info"><h3>KEY CASE</h3><p class="price">¥7,800〜</p></div>
       </article>
       <article class="product-card">
-        <a href="#shop" class="product-card__img-wrap">
-          <img src="image/oil.jpg" alt="Card Case">
-        </a>
-        <div class="product-card__info">
-          <h3>CARD CASE</h3>
-          <p class="price">¥6,600〜</p>
-        </div>
+        <a href="#shop" class="product-card__img-wrap"><img src="image/oil.jpg" alt="Card Case"></a>
+        <div class="product-card__info"><h3>CARD CASE</h3><p class="price">¥6,600〜</p></div>
       </article>
       <article class="product-card">
-        <a href="#shop" class="product-card__img-wrap">
-          <img src="image/work.jpg" alt="Coin Case">
-        </a>
-        <div class="product-card__info">
-          <h3>COIN CASE</h3>
-          <p class="price">¥6,600〜</p>
-        </div>
+        <a href="#shop" class="product-card__img-wrap"><img src="image/work.jpg" alt="Coin Case"></a>
+        <div class="product-card__info"><h3>COIN CASE</h3><p class="price">¥6,600〜</p></div>
       </article>
     </div>
     <div class="products__cta">
@@ -139,43 +134,28 @@
     <div class="features__grid">
       <div class="feature-item">
         <div class="feature-icon">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 6C14 6 8 14 8 22c0 10 8 18 16 20 8-2 16-10 16-20 0-8-6-16-16-16z" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M24 12v12l8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+          <svg viewBox="0 0 48 48" fill="none"><path d="M24 6C14 6 8 14 8 22c0 10 8 18 16 20 8-2 16-10 16-20 0-8-6-16-16-16z" stroke="currentColor" stroke-width="1.5"/><path d="M24 12v12l8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
         <h3>厳選した本革</h3>
         <p>国内外から選び抜いた上質な本革を使用しています。</p>
       </div>
       <div class="feature-item">
         <div class="feature-icon">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M14 34L8 40M34 14l6-6M14 14l20 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <circle cx="36" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
-            <circle cx="12" cy="36" r="4" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M22 26c-2 2-4 5-4 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+          <svg viewBox="0 0 48 48" fill="none"><path d="M14 34L8 40M34 14l6-6M14 14l20 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="36" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="36" r="4" stroke="currentColor" stroke-width="1.5"/></svg>
         </div>
         <h3>すべて手縫い</h3>
         <p>職人の手で丁寧に縫い上げるこだわりの手仕上げ。</p>
       </div>
       <div class="feature-item">
         <div class="feature-icon">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 36V20l12-8 12 8v16" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-            <rect x="18" y="28" width="12" height="8" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M24 12v4M16 24h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+          <svg viewBox="0 0 48 48" fill="none"><path d="M12 36V20l12-8 12 8v16" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><rect x="18" y="28" width="12" height="8" stroke="currentColor" stroke-width="1.5"/></svg>
         </div>
         <h3>修理・メンテナンス</h3>
         <p>長く使っていただけるよう、修理も承っています。</p>
       </div>
       <div class="feature-item">
         <div class="feature-icon">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 8l4 8 9 1.3-6.5 6.3 1.5 9L24 28l-8 4.6 1.5-9L11 17.3l9-1.3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-            <path d="M16 38h16M20 42h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+          <svg viewBox="0 0 48 48" fill="none"><path d="M24 8l4 8 9 1.3-6.5 6.3 1.5 9L24 28l-8 4.6 1.5-9L11 17.3l9-1.3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M16 38h16M20 42h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
         <h3>ギフトラッピング</h3>
         <p>大切な方への贈り物に、心を込めてお包みします。</p>
@@ -191,41 +171,20 @@
     </div>
     <div class="journal__grid">
       <article class="journal-card journal-card--featured">
-        <a href="#" class="journal-card__img-wrap">
-          <span class="tag-new">NEW</span>
-          <img src="image/new.jpg" alt="革の個性と経年変化の楽しみ方">
-        </a>
-        <div class="journal-card__info">
-          <time>2024.05.10</time>
-          <h3>革の個性と経年変化の楽しみ方</h3>
-        </div>
+        <a href="#" class="journal-card__img-wrap"><span class="tag-new">NEW</span><img src="image/new.jpg" alt="革の個性と経年変化の楽しみ方"></a>
+        <div class="journal-card__info"><time>2024.05.10</time><h3>革の個性と経年変化の楽しみ方</h3></div>
       </article>
       <article class="journal-card">
-        <a href="#" class="journal-card__img-wrap">
-          <img src="image/tool.jpg" alt="手縫いのこだわりと制作の流れ">
-        </a>
-        <div class="journal-card__info">
-          <time>2024.04.28</time>
-          <h3>手縫いのこだわりと制作の流れ</h3>
-        </div>
+        <a href="#" class="journal-card__img-wrap"><img src="image/tool.jpg" alt="手縫いのこだわりと制作の流れ"></a>
+        <div class="journal-card__info"><time>2024.04.28</time><h3>手縫いのこだわりと制作の流れ</h3></div>
       </article>
       <article class="journal-card">
-        <a href="#" class="journal-card__img-wrap">
-          <img src="image/oil.jpg" alt="革製品のお手入れ方法（初心者向け）">
-        </a>
-        <div class="journal-card__info">
-          <time>2024.04.15</time>
-          <h3>革製品のお手入れ方法（初心者向け）</h3>
-        </div>
+        <a href="#" class="journal-card__img-wrap"><img src="image/oil.jpg" alt="革製品のお手入れ方法（初心者向け）"></a>
+        <div class="journal-card__info"><time>2024.04.15</time><h3>革製品のお手入れ方法（初心者向け）</h3></div>
       </article>
       <article class="journal-card">
-        <a href="#" class="journal-card__img-wrap">
-          <img src="image/6.jpg" alt="アトリエのある風景と日々のこと">
-        </a>
-        <div class="journal-card__info">
-          <time>2024.04.01</time>
-          <h3>アトリエのある風景と日々のこと</h3>
-        </div>
+        <a href="#" class="journal-card__img-wrap"><img src="image/6.jpg" alt="アトリエのある風景と日々のこと"></a>
+        <div class="journal-card__info"><time>2024.04.01</time><h3>アトリエのある風景と日々のこと</h3></div>
       </article>
     </div>
     <div class="journal__cta">
@@ -240,13 +199,8 @@
         <p class="shop-cta__label">オンラインショップで購入する</p>
         <p class="shop-cta__note">BASE・STORESにてご購入いただけます</p>
       </div>
-      <a href="#" target="_blank" class="btn btn--light shop-cta__btn">
-        ショップを見る
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
-          <polyline points="15 3 21 3 21 9"/>
-          <line x1="10" y1="14" x2="21" y2="3"/>
-        </svg>
+      <a href="#" target="_blank" class="btn btn--light shop-cta__btn">ショップを見る
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
       </a>
     </div>
   </section>
@@ -283,11 +237,7 @@
       <div class="footer__social">
         <h4>FOLLOW US</h4>
         <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-            <circle cx="12" cy="12" r="5"/>
-            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-          </svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
         </a>
         <div class="footer__imgs">
           <img src="image/top.jpg" alt="">
